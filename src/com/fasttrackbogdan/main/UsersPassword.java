@@ -1,15 +1,21 @@
 package com.fasttrackbogdan.main;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
 
 /**
  * Created by Bogdan on 2/21/2015.
  */
 public class UsersPassword {
     public static void main(String[] args) throws IOException {
-        String user = "bogdan";
-        String parola ="parola";
+        //String user = "bogdan";
+        //String password ="parola";
+
+        User u = new User();
+        u.setName("vasile");
+        u.setPassword("parola");
         String num;
         String pass;
         Runtime rs = Runtime.getRuntime();
@@ -20,8 +26,11 @@ public class UsersPassword {
         System.out.println("Pas: " );
         pass = scanner.nextLine();
 
-        if (user.equals(num) && parola.equals(pass))
+        if (u.getName().equals(num) && u.getPassword().equals(pass))
             pb.start();
+        else {
+            System.out.println("Wrong user or password");
+        }
 
        /* try {
             rs.exec("notepad");
